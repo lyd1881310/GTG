@@ -1,10 +1,11 @@
-# GTG
 Official repository of AAAI2025 under review paper "GTG: Generalizable Trajectory Generation Model for Urban Mobility".
 
 ## Overview
 
 [//]: # (![Overview of the framework]&#40;./assets/framework.png&#41;)
-<img src="./assets/framework.png" width="80%" alt="Overview of the framework">
+<p align="center">
+    <img src="./assets/framework.png" width="80%" alt="Overview of the framework">
+</p>
 
 Vehicle trajectory generation has emerged as a critical research area amidst the complexities introduced by rapid urbanization. 
 However, due to factors such as privacy protection and deployment costs, collecting vehicle trajectory data is a long-term 
@@ -31,12 +32,21 @@ pip install -r requirements.txt
 ```
 
 #### Step2: Prepare datasets
-You can download the three processed datasets mentioned in the paper from 
++ You can download the three processed datasets mentioned in the paper from 
 [Google Drive](https://drive.google.com/file/d/1DZqKAOA1JDPQdniOw1byvRlOq5Kwh021/view?usp=sharing)
 and put them into `./data` directory.
+
++ If you want to train and run the model on your own dataset, 
+please process the data according to the format provided in the link above. 
+Place the trajectory and travel cost data files in the `data/traj` directory, 
+and the road network and its adjacency files in the `data/map` directory. 
+The Space Syntax features can be computed using the open-source tool 
+[SpaceSyntaxToolkit](https://github.com/SpaceGroupUCL/qgisSpaceSyntaxToolkit).
 
 #### Step3: Start training GTG model 
 You can start training by specifying the source city dataset and the target city dataset using the following command
 ```angular2html
 python main.py --exp_tag 0 --src beijing --trg xianshi --device cuda:0
 ```
+
+#### Note: More high-resolution figures about this paper can be found in the `./assets` directory.
