@@ -20,7 +20,7 @@ def rank_loss(pred: torch.Tensor, label: torch.Tensor):
     label_train[label_diff == 0] = 0.5
     loss = F.binary_cross_entropy(pred_diff.flatten(), label_train.flatten())
     return loss
-
+ 
 
 def sup_loss(dur_pred, spd_pred, dur_gt, spd_gt):
     # 直接预测的损失

@@ -15,6 +15,11 @@ logging.basicConfig(
     format='[%(levelname)s](%(asctime)s):%(message)s',
     datefmt='%H:%M:%S'
 )
+file_handler = logging.FileHandler('exp_log.log')
+file_handler.setLevel(logging.INFO)
+formatter = logging.Formatter('[%(levelname)s](%(asctime)s):%(message)s')
+file_handler.setFormatter(formatter)
+logging.getLogger().addHandler(file_handler)
 
 
 def set_cfg():
